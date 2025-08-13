@@ -1,0 +1,24 @@
+<svg width="1080" height="1440" viewBox="0 0 1080 1440" xmlns="http://www.w3.org/2000/svg">
+  <!-- Polaroid style frame -->
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- White polaroid frame with shadow -->
+  <rect x="90" y="90" width="900" height="1260" fill="white" rx="5" ry="5" filter="url(#shadow)"/>
+  
+  <!-- Inner photo area (transparent) -->
+  <rect x="140" y="140" width="800" height="1000" fill="none" stroke="#eeeeee" stroke-width="2"/>
+  
+  <!-- Bottom area for text/date -->
+  <rect x="140" y="1170" width="800" height="130" fill="white"/>
+  
+  <!-- Decorative elements -->
+  <text x="540" y="1230" font-family="Arial, sans-serif" font-size="36" fill="#4a6cf7" text-anchor="middle" dominant-baseline="middle">MEMORIES</text>
+  <text x="540" y="1270" font-family="Arial, sans-serif" font-size="24" fill="#6c757d" text-anchor="middle" dominant-baseline="middle" font-style="italic">Photobooth</text>
+  
+  <!-- Decorative tape at top -->
+  <rect x="440" y="60" width="200" height="60" fill="#4a6cf7" rx="5" ry="5" opacity="0.8" transform="rotate(-5, 540, 90)"/>
+</svg>

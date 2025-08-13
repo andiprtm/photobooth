@@ -1,0 +1,28 @@
+<svg width="1080" height="1440" viewBox="0 0 1080 1440" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient background for frame -->
+  <defs>
+    <linearGradient id="frameGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a6cf7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#6a4cf7" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Transparent center with gradient border -->
+  <rect x="0" y="0" width="1080" height="1440" fill="none" stroke="url(#frameGradient)" stroke-width="80" rx="40" ry="40"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="540" cy="80" r="30" fill="#4a6cf7"/>
+  <circle cx="80" cy="720" r="30" fill="#6a4cf7"/>
+  <circle cx="1000" cy="720" r="30" fill="#6a4cf7"/>
+  <circle cx="540" cy="1360" r="30" fill="#4a6cf7"/>
+  
+  <!-- Decorative lines -->
+  <line x1="120" y1="80" x2="420" y2="80" stroke="#4a6cf7" stroke-width="10" stroke-linecap="round"/>
+  <line x1="660" y1="80" x2="960" y2="80" stroke="#4a6cf7" stroke-width="10" stroke-linecap="round"/>
+  <line x1="120" y1="1360" x2="420" y2="1360" stroke="#4a6cf7" stroke-width="10" stroke-linecap="round"/>
+  <line x1="660" y1="1360" x2="960" y2="1360" stroke="#4a6cf7" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Bottom banner -->
+  <rect x="200" y="1300" width="680" height="60" fill="url(#frameGradient)" rx="30" ry="30"/>
+  <text x="540" y="1340" font-family="Arial, sans-serif" font-size="30" fill="white" text-anchor="middle" dominant-baseline="middle">Photobooth Memories</text>
+</svg>

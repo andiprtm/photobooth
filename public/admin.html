@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4a6cf7">
+  <title>Admin - Photobooth App</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="app-container admin-container">
+    <header class="app-header">
+      <h1>Admin Panel</h1>
+    </header>
+
+    <main class="app-main">
+      <section class="section active">
+        <div class="admin-content">
+          <div class="status-container">
+            <h2>Status WhatsApp</h2>
+            <div class="status-badge" id="wa-status">Memuat...</div>
+          </div>
+
+          <div class="qr-container" id="qr-container">
+            <h3>Scan QR Code</h3>
+            <div id="qrcode"></div>
+            <p class="qr-help">Buka WhatsApp di ponsel Anda dan pindai kode QR ini untuk login</p>
+          </div>
+
+          <div class="connected-info" id="connected-info" style="display: none;">
+            <h3>WhatsApp Terhubung</h3>
+            <p>WhatsApp berhasil terhubung dan siap digunakan untuk mengirim pesan.</p>
+          </div>
+
+          <div class="button-group">
+            <button id="refresh-btn" class="btn">Refresh Status</button>
+            <button id="reconnect-btn" class="btn btn-secondary">Reconnect</button>
+            <button id="logout-btn" class="btn btn-danger">Logout</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+  </div>
+
+  <!-- Admin Scripts -->
+  <script type="module" src="/scripts/admin.js"></script>
+</body>
+</html>

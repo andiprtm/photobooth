@@ -1,0 +1,18 @@
+{
+  "frames": [
+    {
+      "id": "frame1",
+      "name": "Frame 1",
+      "url": "/frames/frame1.png",
+      "thumbnail": "/frames/frame1.png",
+      "type": "png"
+    },
+    {
+      "id": "frame2",
+      "name": "Frame 2",
+      "url": "/frames/frame2.png",
+      "thumbnail": "/frames/frame2.png",
+      "type": "png"
+    }
+  ]
+}

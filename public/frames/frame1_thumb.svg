@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Border frame -->
+  <rect x="10" y="10" width="180" height="180" fill="none" stroke="#4a6cf7" stroke-width="10" rx="5" ry="5"/>
+  
+  <!-- Corner decorations -->
+  <circle cx="20" cy="20" r="5" fill="#4a6cf7"/>
+  <circle cx="180" cy="20" r="5" fill="#4a6cf7"/>
+  <circle cx="20" cy="180" r="5" fill="#4a6cf7"/>
+  <circle cx="180" cy="180" r="5" fill="#4a6cf7"/>
+  
+  <!-- Bottom text area -->
+  <rect x="30" y="150" width="140" height="20" fill="#4a6cf7" rx="3" ry="3"/>
+  <text x="100" y="165" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" dominant-baseline="middle">Photobooth App</text>
+</svg>

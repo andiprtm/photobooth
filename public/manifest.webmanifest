@@ -1,0 +1,23 @@
+{
+  "name": "Photobooth App",
+  "short_name": "Photobooth",
+  "description": "Aplikasi photobooth lokal dengan fitur pengiriman WhatsApp",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#4a6cf7",
+  "icons": [
+    {
+      "src": "/frames/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/frames/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

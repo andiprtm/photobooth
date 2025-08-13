@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4a6cf7">
+  <title>Photobooth App</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Photobooth</h1>
+    </header>
+
+    <main class="app-main">
+      <!-- Camera Section -->
+      <section id="camera-section" class="section active">
+        <div class="camera-container">
+          <div class="video-container">
+            <video id="video" playsinline autoplay></video>
+            <div class="camera-overlay">
+              <div id="countdown" class="countdown"></div>
+            </div>
+          </div>
+          
+          <div class="camera-controls">
+            <button id="switch-camera" class="btn" aria-label="Ganti Kamera">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12c0 1.2-.504 2.267-1.513 3.2-.997.933-2.29 1.4-3.867 1.4-1.6 0-3-.467-4.2-1.4-1.2-.933-1.8-2-1.8-3.2 0-1.2.6-2.267 1.8-3.2 1.2-.933 2.6-1.4 4.2-1.4 1.577 0 2.87.467 3.867 1.4C20.497 9.733 21 10.8 21 12z"/>
+                <path d="M14.5 19c0-1.425-.525-2.775-1.575-4.05C11.875 13.675 10.45 13 8.75 13c-1.7 0-3.125.675-4.275 2.025C3.325 16.375 2.75 17.725 2.75 19.25c0 1.525.575 2.875 1.725 4.05C5.625 24.475 7.05 25.25 8.75 25.25c1.7 0 3.125-.775 4.275-2.325C14.175 21.375 14.5 20.025 14.5 18.5v.5z"/>
+              </svg>
+            </button>
+            <button id="capture-btn" class="btn btn-primary" aria-label="Ambil Gambar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Editor Section -->
+      <section id="editor-section" class="section">
+        <div class="editor-container">
+          <div class="canvas-container">
+            <canvas id="editor-canvas"></canvas>
+          </div>
+          
+          <div class="editor-controls">
+            <div class="control-group">
+              <label for="frame-select">Frame</label>
+              <select id="frame-select" class="select-control">
+                <!-- Frame options will be populated by JavaScript -->
+              </select>
+            </div>
+            
+            <div class="control-group">
+              <label>Pengaturan Gambar</label>
+              <div class="slider-controls">
+                <div class="slider-control">
+                  <label for="zoom-control">Zoom</label>
+                  <input type="range" id="zoom-control" min="1" max="2" step="0.05" value="1">
+                </div>
+                
+                <div class="slider-control">
+                  <label for="rotate-control">Rotasi</label>
+                  <input type="range" id="rotate-control" min="-30" max="30" step="1" value="0">
+                </div>
+                
+                <div class="slider-control">
+                  <label for="brightness-control">Kecerahan</label>
+                  <input type="range" id="brightness-control" min="0.5" max="1.5" step="0.05" value="1">
+                </div>
+                
+                <div class="slider-control">
+                  <label for="contrast-control">Kontras</label>
+                  <input type="range" id="contrast-control" min="0.5" max="1.5" step="0.05" value="1">
+                </div>
+              </div>
+            </div>
+            
+            <div class="button-group">
+              <button id="back-btn" class="btn">Kembali</button>
+              <button id="download-btn" class="btn btn-secondary">Unduh</button>
+              <button id="share-btn" class="btn btn-primary">Kirim WhatsApp</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WhatsApp Send Section -->
+      <section id="whatsapp-section" class="section">
+        <div class="whatsapp-container">
+          <h2>Kirim via WhatsApp</h2>
+          
+          <div class="preview-container">
+            <img id="whatsapp-preview" alt="Preview gambar">
+          </div>
+          
+          <form id="whatsapp-form">
+            <div class="form-group">
+              <label for="phone-number">Nomor WhatsApp</label>
+              <input type="tel" id="phone-number" placeholder="08xxxxxxxxxx / 628xxxxxxxxxx / +628xxxxxxxxxx" required>
+              <button type="button" id="add-number" class="btn btn-small">+ Tambah</button>
+            </div>
+            
+            <div id="recipients-list" class="recipients-list">
+              <!-- Daftar penerima akan ditampilkan di sini -->
+            </div>
+            
+            <div class="form-group">
+              <label for="caption">Pesan (opsional)</label>
+              <textarea id="caption" rows="3" placeholder="Tulis pesan..."></textarea>
+            </div>
+            
+            <div class="button-group">
+              <button type="button" id="back-to-editor" class="btn">Kembali</button>
+              <button type="submit" id="send-wa-btn" class="btn btn-primary">Kirim</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+  </div>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('Service Worker registered'))
+          .catch(err => console.error('Service Worker registration failed:', err));
+      });
+    }
+  </script>
+  
+  <!-- App Scripts -->
+  <script type="module" src="/scripts/app.js"></script>
+</body>
+</html>
